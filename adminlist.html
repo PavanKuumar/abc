@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Data Tables</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/libs/css/style.css">
+    <link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/datatables/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/datatables/css/buttons.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/datatables/css/select.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/datatables/css/fixedHeader.bootstrap4.css">
+
+     <!-- jquery 3.3.1 -->
+     <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+     <script> 
+         $(function(){
+           $("#leftsidebar").load("leftsidebar.html"); 
+           $("#footer").load("footer.html"); 
+           $("#navbar").load("navbar.html"); 
+         });
+         </script> 
+         
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- main wrapper -->
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper">
+         <!-- ============================================================== -->
+        <!-- navbar -->
+        <!-- ============================================================== -->
+        <div id="navbar"></div>
+        <!-- ============================================================== -->
+        <!-- end navbar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- left sidebar -->
+        <!-- ============================================================== -->
+        <div id="leftsidebar"></div>
+        <!-- ============================================================== -->
+        <!-- end left sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="container-fluid  dashboard-content">
+                <!-- ============================================================== -->
+                <!-- pageheader -->
+                <!-- ============================================================== -->
+               
+                <div class="row">
+                    <!-- ============================================================== -->
+                    <!-- data table  -->
+                    <!-- ============================================================== -->
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0"><b>Admin Details</b></h5>
+                                <p>Provides all the information about admins registered</p>
+                                <a href="#addEmployeeModal" class="btn btn-success btn-xs" data-toggle="modal" style="float: right;"><i class="fas fa-plus"></i><span>Add New Admin</span></a>
+                            </div>
+                            
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                              
+                                                <th>Company</th>
+                                                <th>Department</th>
+                                                <th>Email</th>
+                                                <th>Full Name</th>
+                                                <th>Phone Number</th>
+                                                <th>Status</th>
+                                                <th>Activation</th>
+                                                
+                                                <th> Edit / Delete </th>
+                                                
+                                               
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody class="mTbody">
+                                         
+                                        </tbody>
+                                    </table>
+
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end data table  -->
+                    <!-- ============================================================== -->
+                </div>
+               
+              
+               
+            </div>
+
+        <!-- Add Modal HTML -->
+        <div id="addEmployeeModal" class="modal fade">
+            <div class="modal-dialog">
+              <div class="modal-content">.
+                  
+                <form >
+                  <div class="modal-header">						
+                    <h4 class="modal-title">Add Admin</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  </div>
+                  <div class="modal-body" id="add">
+                    <label class="errMsg"></label>
+                    <div class="form-group">
+                        <!-- <div class="form-group ">
+                            <div class="row">
+                              <div class="col-sm-6">
+                                <label>ID</label>
+                                <input readonly name="id" type="text" class="form-control id" required>
+                              </div>
+                            </div>
+                        </div>  -->
+                        <div class="row">
+                          
+                          <div class="col-sm-6">
+                            <label>Company</label>
+                            <input name="company_name" type="text" class="form-control" required>
+                          </div>
+                          <div class="col-sm-6">
+                            <label>Department Type</label>
+                            <input name="department_type" type="text" class="form-control" required>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-sm-6">
+                              <label>Email</label>
+                              <input name="email" type="text" class="form-control" required>
+                            </div> 
+                          <div class="col-sm-6">
+                            <label>Full Name</label>
+                            <input name="full_name" type="text" class="form-control" required>
+                          </div> 
+                        </div>
+                      </div>
+  
+                      <div class="form-group">
+                        <div class="row">
+                          
+                          <div class="col-sm-6">
+                            <label>Phone Number</label>
+                            <input name="phone_number" type="number" class="form-control" required/>
+                          </div>
+                          <div class="col-sm-6">
+                            <label>Password</label>
+                            <input name="password" type="password" class="form-control" required/>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <label>Employee ID</label>
+                            <input name="employee_id" type="text" class="form-control" required/>
+                          </div>
+                        </div>
+                      </div>
+                      
+                   
+  
+                    					
+                  </div>
+                  <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input onclick="add('add')" type="button" class="btn btn-success" value="Add">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+            <!-- Edit Modal HTML -->
+          <div id="editModal" class="modal fade">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <form id="dash_concept">
+                  <div class="modal-header">						
+                    <h4 class="modal-title">Edit Record</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    <label class="errMsg"></label>	
+                    <div class="form-group">
+                      <div class="form-group ">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <label>ID</label>
+                              <input readonly name="id" type="text" class="form-control id" required>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                        
+                        <div class="col-sm-6">
+                          <label>Company</label>
+                          <input name="company_name" type="text" class="form-control company_name" required>
+                        </div>
+                        <div class="col-sm-6">
+                          <label>Department Type</label>
+                          <input name="department_type" type="text" class="form-control department_type" required>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-sm-6">
+                            <label>Email</label>
+                            <input name="email" type="text" class="form-control email" required>
+                          </div> 
+                        <div class="col-sm-6">
+                          <label>Full Name</label>
+                          <input name="full_name" type="text" class="form-control full_name" required>
+                        </div> 
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="row">
+                        
+                        <div class="col-sm-6">
+                          <label>Phone Number</label>
+                          <input name="phone_number" type="number" class="form-control phone_number" required/>
+                        </div>
+                      </div>
+                    </div>	
+                  </div>
+                  <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input onclick="updateRecord('dash_concept')" type="button" class="btn btn-info"  value="Save" >
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- End Edit Modal HTML -->  
+
+          
+
+
+
+
+
+
+
+            <!-- Delete Modal HTML -->
+            <div id="deleteEmployeeModal" class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <form>
+                      <div class="modal-header">						
+                        <h4 class="modal-title">Delete Record</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      </div>
+                      <div class="modal-body">					
+                        <p>Are you sure you want to delete these Records?</p>
+                        <p class="text-warning"><small>This action cannot be undone.</small></p>
+                      </div>
+                      <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input data-param="" onclick="deleteRow(this)" type="button" class="btn btn-danger deleteData" value="Delete">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            <!-- End Delete Modal HTML -->  
+
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <div id="footer"></div>
+            <!-- ============================================================== -->
+            <!-- end footer -->
+            <!-- ============================================================== -->
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end main wrapper -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <script src="assets/vendor/multi-select/js/jquery.multi-select.js"></script>
+    <script src="assets/libs/js/main-js.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="assets/vendor/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+    <script src="assets/vendor/datatables/js/buttons.bootstrap4.min.js"></script>
+    <script src="assets/vendor/datatables/js/data-table.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.colVis.min.js"></script>
+    <script src="https://cdn.datatables.net/rowgroup/1.0.4/js/dataTables.rowGroup.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
+
+       <!-- =================== DOCKETRUN LOGIC===================-->
+       <script src="settings.js"></script>
+       <script src="assets/libs/js/customLibrary.js"></script>
+       <script src="assets/libs/js/allFunctions.js"></script>
+       <script src="assets/libs/js/callRestApi.js"></script>
+       <script src="assets/libs/js/adminlist.js"></script>
+       <script src="assets/libs/js/logout.js"></script>
+    
+</body>
+ 
+</html>
